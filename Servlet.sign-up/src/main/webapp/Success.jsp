@@ -1,0 +1,50 @@
+<%@page import="java.util.List"%>
+<%@page import="dto.Student"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		Student student = (Student) request.getAttribute("student");
+		List<Student> list = (List<Student>) request.getAttribute("list");//from rrylist its being upcsted then get stored.
+		//we re setting the value in servlet hence when we run this file student and list will be null, 
+		//so when we run login.html the values are set and objects will be stored and printed.
+		
+	%>
+	<%--<%=student %>
+	<%=list %>//this will print null only when we dont give the below get values hence it will give nullpointer exception --%>
+
+	<div>
+		<table border="1">
+			<tr>
+				<th>ID</Id>
+				<th>Name</th>
+				<th>Mobile</th>
+				<th>Email</th>
+				<th>Password</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<%for(Student student1:list) { %>
+			<tr>
+				<th><%=student1.getId()%></th>
+				<th><%=student1.getName()%></th>
+				<th><%=student1.getMobile()%></th>
+				<th><%=student1.getEmail()%></th>
+				<th><%=student1.getPass()%></th>
+				<th><a href="edit.jsp?id=<%=student1.getId()%>"><button>Edit</button></a></th>
+				<th><a href="delete?id=<%=student1.getId()%>"><button>Delete</button></a></th>
+			</tr>
+			
+			<% } %>
+
+		</table>
+	</div>
+
+</body>
+</html>

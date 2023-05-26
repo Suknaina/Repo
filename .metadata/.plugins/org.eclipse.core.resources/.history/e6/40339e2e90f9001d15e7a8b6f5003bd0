@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<form action="save" method="post">
+			<table bgcolor="pink" width="200px">
+				<tr>
+					<td>Empid: <input type="number" name="empid"><br>
+					</td>
+				</tr>
+				<tr>
+					<td>Name: <input type="text" name="name"><br>
+					</td>
+				</tr>
+				<tr>
+					<td>Mobile: <input type="number" name="mobile"><br>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button>Save</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<br>
+		<form action="namesearch" method="post">
+			<table bgcolor="skyblue" width="200px">
+			<tr>
+					<td>Name: <input type="text" name="name"><br><br>
+					</td>
+				</tr>
+				<br>
+				<tr>
+					<td>
+						<button>Search</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<br>
+		<form action="empidsearch" method="post">
+			<table bgcolor="cyan" width="200px">
+			<tr>
+					<td>EmpId: <input type="text" name="empid"><br><br>
+					</td>
+				</tr>
+				<br>
+				<tr>
+					<td>
+						<button>Search</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<br>
+		<form action="fetchall" method="post">
+		<table bgcolor="orange" width="200px">
+		<tr>
+					<td>
+						<button>FetchAll</button>
+					</td>
+				</tr>
+		</table>
+		</form>
+	</center>
+</body>
+</html>

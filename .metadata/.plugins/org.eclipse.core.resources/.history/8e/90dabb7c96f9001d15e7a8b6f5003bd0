@@ -1,0 +1,45 @@
+package dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import dto.Student;
+
+public class Studentdao {
+	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("dev");
+	EntityManager entityManager = entityManagerFactory.createEntityManager();
+	EntityTransaction entityTransaction = entityManager.getTransaction();
+	
+	public void save(Student student) {
+		entityTransaction.begin();
+		entityManager.persist(student);
+		entityTransaction.commit();
+	}
+
+	public Student fetch(String name) {
+			List<Student> list = entityManager.createQuery("select x from Student x where name=?1").setParameter(1, name)
+					.getResultList();
+			if (list.isEmpty()) {
+				return null;
+			} else {
+				return list.get(0);
+			}
+		
+	}
+	public Student fetch(int empid) {
+		List<Student> list = entityManager.createQuery("select x from Student x where empid=?1").setParameter(1, empid)
+				.getResultList();
+		if (list.isEmpty()) {
+			return null;
+		} else {
+			return list.get(0);
+		}
+	
+}
+	
+	
+}

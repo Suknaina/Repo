@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<form action="" method="post">
+			<tr>
+				<td>Empid: <input type="number" name="empid"><br>
+				</td>
+			</tr>
+			<tr>
+				<td>Name: <input type="text" name="name"><br>
+				</td>
+			</tr>
+			<tr>
+				<td>Mobile: <input type="number" name="mobile"><br>
+				<br>
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<button>Save</button>
+			</td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>
